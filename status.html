@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Application status — GRM IT Solutions</title>
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="top">
+        <div class="brand">
+          <div class="logo-slot" aria-label="Company logo placeholder"></div>
+          <div>
+            <p class="eyebrow">GRM IT Solutions</p>
+            <h1>Find your application</h1>
+          </div>
+        </div>
+        <p class="lede">
+          Dummy copy: enter the mobile and email from your form. We will return you to resume upload
+          or payment. Do not share this with anyone else.
+        </p>
+      </header>
+
+      <nav class="stepper" aria-label="Application progress">
+        <div class="step">Apply</div>
+        <div class="step">Pay</div>
+        <div class="step is-soon">Test · Soon</div>
+      </nav>
+
+      <form id="lookup-form" class="card" style="margin-top: 1.25rem">
+        <div id="banner" class="banner" role="status"></div>
+        <div class="grid two">
+          <div class="field">
+            <label for="mobile">Mobile number <span class="req">*</span></label>
+            <input id="mobile" name="mobile" type="tel" inputmode="numeric" autocomplete="tel" required />
+          </div>
+          <div class="field">
+            <label for="email">Email <span class="req">*</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+        </div>
+        <div class="actions">
+          <button class="btn btn-primary" id="lookup-btn" type="submit">Continue</button>
+          <a class="btn btn-ghost" href="index.html">New application</a>
+        </div>
+      </form>
+
+      <p class="foot">This lookup issues a new access link and signs out the old one on other devices.</p>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/status.js"></script>
+  </body>
+</html>

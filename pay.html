@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Payment — GRM IT Solutions</title>
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="top">
+        <div class="brand">
+          <div class="logo-slot" aria-label="Company logo placeholder"></div>
+          <div>
+            <p class="eyebrow">GRM IT Solutions</p>
+            <h1>Payment</h1>
+          </div>
+        </div>
+        <p class="lede">
+          Pay the registration fee to complete this step. The assessment / test is coming soon and
+          will unlock in a later release.
+        </p>
+      </header>
+
+      <nav class="stepper" aria-label="Application progress">
+        <div class="step is-done">Apply</div>
+        <div class="step is-current">Pay</div>
+        <div class="step is-soon">Test · Soon</div>
+      </nav>
+
+      <section class="card" style="margin-top: 1.25rem">
+        <div id="banner" class="banner" role="status"></div>
+        <div id="panel-loading">
+          <p class="lede">Loading your application…</p>
+        </div>
+
+        <div id="panel-resume" class="hidden">
+          <p class="kicker">Upload your resume</p>
+          <p class="lede">Payment stays locked until a PDF, DOC, or DOCX is stored.</p>
+          <form id="resume-form" class="grid" style="margin-top: 1rem">
+            <div class="field">
+              <label for="resume">Resume <span class="req">*</span></label>
+              <div class="file">
+                <input id="resume" name="resume" type="file" accept=".pdf,.doc,.docx,application/pdf" required />
+                <p class="hint">Maximum 2 MB.</p>
+              </div>
+            </div>
+            <button class="btn btn-primary" id="resume-btn" type="submit">Upload and continue</button>
+          </form>
+        </div>
+
+        <div id="panel-pay" class="hidden">
+          <p class="kicker" id="pay-hello">Hello</p>
+          <div class="summary" style="margin: 1rem 0 1.25rem">
+            <div class="summary-row"><span>Application ID</span><strong id="app-id">—</strong></div>
+            <div class="summary-row"><span>Position</span><strong id="app-role">—</strong></div>
+            <div class="summary-row"><span>Amount</span><strong class="amount" id="app-amount">—</strong></div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-primary" id="pay-btn" type="button">Pay now</button>
+            <p class="fee-note" id="inapp-note"></p>
+          </div>
+        </div>
+
+        <div id="panel-paid" class="hidden">
+          <p class="kicker">Payment successful</p>
+          <p class="lede" id="paid-copy"></p>
+          <div class="coming-soon" role="status">
+            <span class="badge">Coming soon</span>
+            <h3>Assessment / test</h3>
+            <p>
+              Your online test is not available yet. Keep your Application ID safe — we will unlock
+              the assessment in the next version.
+            </p>
+          </div>
+          <div class="actions">
+            <button class="btn btn-primary is-disabled" type="button" disabled>Start assessment</button>
+            <a class="btn btn-ghost" href="status.html">View status</a>
+          </div>
+        </div>
+
+        <div id="panel-missing" class="hidden">
+          <p class="kicker">No application found</p>
+          <p class="lede">Start a new form, or continue with the mobile and email you registered.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="index.html">Start application</a>
+            <a class="btn btn-ghost" href="status.html">Find existing application</a>
+          </div>
+        </div>
+      </section>
+
+      <p class="foot">UPI, cards, and net banking are shown inside Razorpay Checkout — not the merchant dashboard.</p>
+    </div>
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/pay.js"></script>
+  </body>
+</html>

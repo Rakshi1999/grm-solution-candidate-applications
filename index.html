@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Candidate application — GRM IT Solutions</title>
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="top">
+        <div class="brand">
+          <div class="logo-slot" aria-label="Company logo placeholder"></div>
+          <div>
+            <p class="eyebrow">GRM IT Solutions</p>
+            <h1>Candidate application</h1>
+          </div>
+        </div>
+        <p class="lede">
+          Dummy intro text: complete this form to register. After you submit, you will upload a
+          resume if needed and continue to payment. Assessment opens in a later version.
+        </p>
+        <a class="continue-link" href="status.html">Already started? Continue with mobile and email</a>
+      </header>
+
+      <nav class="stepper" aria-label="Application progress">
+        <div class="step is-current">Apply</div>
+        <div class="step">Pay</div>
+        <div class="step is-soon">Test · Soon</div>
+      </nav>
+
+      <div id="existing" class="card hidden" style="margin-top: 1.25rem">
+        <p class="kicker">You have an application on this device</p>
+        <p class="lede" id="existing-copy"></p>
+        <div class="actions">
+          <a class="btn btn-primary" href="pay.html">Continue</a>
+        </div>
+      </div>
+
+      <form id="apply-form" class="card" style="margin-top: 1.25rem" novalidate>
+        <div id="banner" class="banner" role="status"></div>
+
+        <div class="section-title">
+          <h2>Personal details</h2>
+          <p>Use the same mobile and email if you return later.</p>
+        </div>
+        <div class="grid two">
+          <div class="field span-2">
+            <label for="fullName">Full name <span class="req">*</span></label>
+            <input id="fullName" name="fullName" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="mobile">Mobile number <span class="req">*</span></label>
+            <input id="mobile" name="mobile" type="tel" inputmode="numeric" autocomplete="tel" required />
+            <p class="hint">10-digit Indian mobile. +91 is fine.</p>
+          </div>
+          <div class="field">
+            <label for="email">Email <span class="req">*</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="dob">Date of birth <span class="req">*</span></label>
+            <input id="dob" name="dob" type="date" required />
+          </div>
+          <div class="field">
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender">
+              <option value="">Prefer not to say</option>
+              <option>Female</option>
+              <option>Male</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="currentLocation">Current location <span class="req">*</span></label>
+            <input id="currentLocation" name="currentLocation" autocomplete="address-level2" required />
+          </div>
+          <div class="field span-2">
+            <label for="address">Address</label>
+            <textarea id="address" name="address" autocomplete="street-address"></textarea>
+          </div>
+        </div>
+
+        <div class="section-title" style="margin-top: 1.75rem">
+          <h2>Education</h2>
+          <p>Dummy helper: highest qualification is required.</p>
+        </div>
+        <div class="grid two">
+          <div class="field">
+            <label for="highestQualification">Highest qualification <span class="req">*</span></label>
+            <input id="highestQualification" name="highestQualification" required placeholder="B.Tech / MCA / …" />
+          </div>
+          <div class="field">
+            <label for="specialization">Specialization</label>
+            <input id="specialization" name="specialization" />
+          </div>
+          <div class="field">
+            <label for="college">College / University</label>
+            <input id="college" name="college" />
+          </div>
+          <div class="field">
+            <label for="graduationYear">Graduation year</label>
+            <input id="graduationYear" name="graduationYear" inputmode="numeric" maxlength="4" />
+          </div>
+          <div class="field">
+            <label for="percentageCgpa">Percentage / CGPA</label>
+            <input id="percentageCgpa" name="percentageCgpa" />
+          </div>
+        </div>
+
+        <div class="section-title" style="margin-top: 1.75rem">
+          <h2>Experience</h2>
+          <p>Freshers can enter 0 or leave optional fields blank.</p>
+        </div>
+        <div class="grid two">
+          <div class="field">
+            <label for="totalExperience">Total experience</label>
+            <input id="totalExperience" name="totalExperience" placeholder="e.g. 2 years" />
+          </div>
+          <div class="field">
+            <label for="relevantExperience">Relevant experience</label>
+            <input id="relevantExperience" name="relevantExperience" />
+          </div>
+          <div class="field span-2">
+            <label for="currentCompany">Current / previous company</label>
+            <input id="currentCompany" name="currentCompany" />
+          </div>
+          <div class="field span-2">
+            <label for="skills">Skills</label>
+            <textarea id="skills" name="skills" placeholder="JavaScript, SQL, …"></textarea>
+          </div>
+        </div>
+
+        <div class="section-title" style="margin-top: 1.75rem">
+          <h2>Role and resume</h2>
+          <p>PDF, DOC, or DOCX. Max 2 MB.</p>
+        </div>
+        <div class="grid two">
+          <div class="field span-2">
+            <label for="positionCourse">Position / course applied for <span class="req">*</span></label>
+            <input
+              id="positionCourse"
+              name="positionCourse"
+              list="roles"
+              required
+              placeholder="Graduate Trainee"
+            />
+            <datalist id="roles">
+              <option value="Graduate Trainee"></option>
+              <option value="Junior Software Engineer"></option>
+              <option value="Frontend Developer"></option>
+              <option value="Backend Developer"></option>
+              <option value="Internship"></option>
+            </datalist>
+          </div>
+          <div class="field span-2">
+            <label for="resume">Resume</label>
+            <div class="file">
+              <input id="resume" name="resume" type="file" accept=".pdf,.doc,.docx,application/pdf" />
+              <p class="hint" id="resume-hint">Optional on this screen if you will upload on the next step. Required before payment if Settings say so.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn-primary" id="submit-btn" type="submit">Submit application</button>
+          <p class="fee-note" id="fee-note">A registration fee is collected after this step.</p>
+        </div>
+      </form>
+
+      <p class="foot">Dummy footer: GRM IT Solutions · Candidate portal · v1 registration and payment</p>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/apply.js"></script>
+  </body>
+</html>
