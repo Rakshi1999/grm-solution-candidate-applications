@@ -26,14 +26,7 @@
       document.getElementById("paid-copy").textContent =
         "Application ID: " +
         (app.applicationId || "—") +
-        ". Payment is confirmed. Assessment / test is coming soon.";
-      var payStep = document.querySelector(".stepper .step.is-current");
-      var soonStep = document.querySelector(".stepper .step.is-soon");
-      if (payStep) {
-        payStep.classList.remove("is-current");
-        payStep.classList.add("is-done");
-      }
-      if (soonStep) soonStep.classList.add("is-current");
+        ". Your assessment will be available in the next version.";
       return;
     }
 
